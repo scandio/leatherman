@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: leatherman
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: leatherman
+subjects:
+- kind: ServiceAccount
+  name: leatherman
+  namespace: apps-confluence # TODO: Parameterize

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: leatherman
+  labels:
+    name: leatherman
+spec:
+  serviceAccountName: leatherman
+  containers:
+  - name: leatherman
+    image: gitea.scandio.com/public-kubernetes-tests/leatherman:latest
+    command: ["sleep", "infinity"]
+    resources:
+      limits:
+        memory: "2Gi"
+      requests:
+        memory: "2Gi"
